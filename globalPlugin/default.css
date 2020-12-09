@@ -1,7 +1,6 @@
-h1,h2,h3,h4,h5,h6,strong,
-button,input,select,textarea {
+html, body {
+  font-family: 'Kosugi Maru',-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
   color: #ffffffc7;
-  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
 }
 
 /* font */
