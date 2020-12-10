@@ -1,13 +1,15 @@
+ import Head from 'next/head'
 import type {Meta} from '../../types/meta'
 export const meta: Meta = {
+  title: '新しい職場に入るということ',
   date: ['Wed, 9 Dec 2020 17:22:47 GMT'],
   tag: ['転職', '人生', 'コラム'],
   category: '仕事',
   description: '新しい会社に入る心構えについて',
-  image: 'hoge' // url
+  image: 'https://pbs.twimg.com/profile_images/1320755925783752705/NOlpX5kF_400x400.jpg' // url
 }
 const article = `
-# 新しい職場に入るということ
+# ${meta.title}
 
 こんばんはGENYAです。この記事は2020/11/14 深夜2時に書き始めています。
 
@@ -54,7 +56,17 @@ const article = `
 import { compileMarkdownToHtml, Wrap } from '../../domain/article'
 
 function page() {
-  return <Wrap dangerouslySetInnerHTML={{__html: compileMarkdownToHtml(article)}} />
+  return <>
+    <Head>
+      <title>{meta.title}</title>
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={__dirname} />
+      <meta property="og:image" content={meta.image} />
+    </Head>
+    <Wrap dangerouslySetInnerHTML={{__html: compileMarkdownToHtml(article)}} />
+  </>
 }
 
 export default page
