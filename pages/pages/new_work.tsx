@@ -1,5 +1,6 @@
 import type {Meta} from '../../types/meta'
 export const meta: Meta = {
+  date: ['Wed, 9 Dec 2020 17:22:47 GMT'],
   tag: ['転職', '人生', 'コラム'],
   category: '仕事',
   description: '新しい会社に入る心構えについて',
