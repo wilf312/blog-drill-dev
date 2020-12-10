@@ -39,7 +39,10 @@ export default class _document extends Document {
         <body>
           <Main />
           <NextScript />
-          <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+          <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet" media="print" 
+          // @ts-ignore
+          onLoad="this.media='all'"
+          />
         </body>
       </Html>
     )
