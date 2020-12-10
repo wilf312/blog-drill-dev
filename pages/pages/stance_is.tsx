@@ -1,13 +1,15 @@
+import Head from 'next/head'
 import type {Meta} from '../../types/meta'
 export const meta: Meta = {
+  title: 'スタンスを表明しよう。',
   date: ['Thu, 10 Dec 2020 17:22:47 GMT'],
   tag: ['転職', '人生', 'コラム'],
   category: '仕事',
   description: '根底に流れる動機が共有されていると仕事が振りやすいよねという話',
-  image: 'hoge' // url
+  image: 'https://pbs.twimg.com/profile_images/1320755925783752705/NOlpX5kF_400x400.jpg' // url
 }
 const article = `
-# スタンスを表明しよう。
+# ${meta.title}
 
 これは仕事を誰かとする上でどういう人間なのか、どういう思考で動いているのか、
 先んじて表明しておくことで摩擦係数を下げることができるよという話です。
@@ -27,7 +29,17 @@ const article = `
 import { compileMarkdownToHtml, Wrap } from '../../domain/article'
 
 function page() {
-  return <Wrap dangerouslySetInnerHTML={{__html: compileMarkdownToHtml(article)}} />
-}
+
+  return <>
+    <Head>
+      <title>{meta.title}</title>
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={__dirname} />
+      <meta property="og:image" content={meta.image} />
+    </Head>
+    <Wrap dangerouslySetInnerHTML={{__html: compileMarkdownToHtml(article)}} />
+  </>}
 
 export default page
