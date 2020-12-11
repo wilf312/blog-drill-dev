@@ -34,6 +34,8 @@ export default class _document extends Document {
     return (
       <Html lang="ja">
         <Head>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:creator" content="@wilf_genya" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
         </Head>
         <body>
