@@ -6,7 +6,7 @@ export const meta: Meta = {
   tag: ['転職', '人生', 'コラム'],
   category: '仕事',
   description: '根底に流れる動機が共有されていると仕事が振りやすいよねという話',
-  image: 'https://log.drill.dev/meta/profile.png' // url
+  image: 'https://log.drill.dev/meta/profile.jpg' // url
 }
 const article = `
 # ${meta.title}
