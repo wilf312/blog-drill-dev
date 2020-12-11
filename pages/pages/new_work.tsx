@@ -6,7 +6,7 @@ export const meta: Meta = {
   tag: ['転職', '人生', 'コラム'],
   category: '仕事',
   description: '新しい会社に入る心構えについて',
-  image: 'https://pbs.twimg.com/profile_images/1320755925783752705/NOlpX5kF_400x400.jpg' // url
+  image: 'https://log.drill.dev/meta/profile.png' // url
 }
 const article = `
 # ${meta.title}
