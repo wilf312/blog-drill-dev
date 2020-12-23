@@ -1,12 +1,13 @@
- import Head from 'next/head'
-import type {Meta} from '../../types/meta'
+import {HeadTag, Meta} from  '../../components/atom/Head'
+
 export const meta: Meta = {
   title: '新しい職場に入るということ',
   date: ['Wed, 9 Dec 2020 17:22:47 GMT'],
   tag: ['転職', '人生', 'コラム'],
   category: '仕事',
   description: '新しい会社に入る心構えについて',
-  image: 'https://log.drill.dev/meta/ogp.jpg' // url
+  image: 'https://log.drill.dev/meta/ogp.jpg', // url
+  url: __dirname,
 }
 const article = `
 # ${meta.title}
@@ -57,17 +58,7 @@ import { compileMarkdownToHtml, Wrap } from '../../domain/article'
 
 function page() {
   return <>
-    <Head>
-      <title>{meta.title}</title>
-      <meta property="og:title" content={meta.title} />
-      <meta property="og:description" content={meta.description} />
-      <meta property="og:type" content="article" />
-      <meta property="og:url" content={__dirname} />
-      <meta property="og:image" content={meta.image} />
-      <meta name="twitter:title" content={meta.title} />
-      <meta name="twitter:description" content={meta.description} />
-      <meta name="twitter:image" content={meta.image} />
-    </Head>
+    <HeadTag {...meta} url={__dirname} />
     <Wrap dangerouslySetInnerHTML={{__html: compileMarkdownToHtml(article)}} />
   </>
 }
