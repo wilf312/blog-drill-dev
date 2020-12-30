@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev -p 11111",
     "build": "next build",
+    "ci:integration": "cypress open",
     "type-test": "tsc --noEmit",
     "today": "node -e \"console.log(new Date().toString())\" | pbcopy # TODO: 改行が入る問題を解消したい",
     "start": "next start"
