@@ -10,7 +10,7 @@ export interface Meta {
   image: string // url
 }
 
-export const HeadTag = (props: Meta) => {
+export const HeadTag: React.FC<Meta> = (props: Meta) => {
   return <Head>
     <title>{props.title}</title>
     <meta property="og:title" content={props.title} />

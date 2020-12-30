@@ -3,7 +3,7 @@ import '../globalPlugin/default.css'
 
 import type { AppProps /*, AppContext */ } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
 }
 
