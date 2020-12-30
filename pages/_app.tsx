@@ -3,6 +3,10 @@ import '../globalPlugin/default.css'
 
 import type { AppProps /*, AppContext */ } from 'next/app'
 
+if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+  require('../mocks')
+}
+
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
 }
