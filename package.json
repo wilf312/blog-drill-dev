@@ -13,7 +13,7 @@
     "ci:integration": "cypress run --spec cypress/integration/url.spec.ts",
     "cypress:open": "cypress open",
     "type-test": "tsc --noEmit",
-    "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "today": "node -e \"console.log(new Date().toString())\" | pbcopy # TODO: 改行が入る問題を解消したい",
     "start": "next start"
   },
