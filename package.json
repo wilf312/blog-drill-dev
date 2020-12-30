@@ -8,9 +8,10 @@
   "scripts": {
     "dev": "next dev -p 11111",
     "build": "next build",
-    "ci:test": "run-s ci:generateUrlList ci:integration",
+    "ci:test": "npm run ci:generateUrlList; start-server-and-test dev http://localhost:11111 ci:integration",
     "ci:generateUrlList": "node cypress/generateUrlList.js",
-    "ci:integration": "cypress open",
+    "ci:integration": "cypress run --spec cypress/integration/url.spec.ts",
+    "cypress:open": "cypress open",
     "type-test": "tsc --noEmit",
     "today": "node -e \"console.log(new Date().toString())\" | pbcopy # TODO: 改行が入る問題を解消したい",
     "start": "next start"
@@ -27,6 +28,7 @@
     "@types/react": "17.0.0",
     "@types/styled-components": "5.1.5",
     "cypress": "^6.2.0",
+    "start-server-and-test": "^1.11.7",
     "styled-components": "5.2.1",
     "typescript": "4.1.2"
   }
