@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "next dev -p 11111",
     "build": "next build",
+    "ci:test": "run-s ci:generateUrlList ci:integration",
+    "ci:generateUrlList": "node cypress/generateUrlList.js",
     "ci:integration": "cypress open",
     "type-test": "tsc --noEmit",
     "today": "node -e \"console.log(new Date().toString())\" | pbcopy # TODO: 改行が入る問題を解消したい",
