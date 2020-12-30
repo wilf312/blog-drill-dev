@@ -26,7 +26,7 @@ const article = `
 
 import { compileMarkdownToHtml, Wrap } from '../../domain/article'
 
-function page() {
+function page(): React.ReactFragment {
   return <>
     <HeadTag {...meta} url={__dirname} />
     <Wrap dangerouslySetInnerHTML={{__html: compileMarkdownToHtml(article)}} />

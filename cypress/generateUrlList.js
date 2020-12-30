@@ -1,7 +1,6 @@
 /**
  * 記事ページのアクセスチェックをするためのURLとタイトルのリストをJSONで吐き出す
  */
-
 const fs = require('fs')
 const path = require('path')
 
