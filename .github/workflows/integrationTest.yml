@@ -14,7 +14,6 @@ jobs:
         with:
           node-version: 14
       - run: yarn install
-      - run: yarn lint
 
   test:
     needs: build
@@ -27,3 +26,27 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn install
       - run: yarn ci:test
+
+
+  lint:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - run: yarn install
+      - run: yarn lint
+  type-test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - run: yarn install
+      - run: yarn type-test
