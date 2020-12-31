@@ -1,5 +1,3 @@
-console.log('mock index')
-
 if (typeof window === 'undefined') {
   const { server } = require('./server')
   server.listen()
