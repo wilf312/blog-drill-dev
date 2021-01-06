@@ -1,7 +1,7 @@
 if (typeof window === 'undefined') {
-  const { server } = require('./server')
+  const { server } = import('./server')
   server.listen()
 } else {
-  const { worker } = require('./browser')
+  const { worker } = import('./browser')
   worker.start()
 }
