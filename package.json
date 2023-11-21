@@ -25,7 +25,7 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@types/markdown-it": "12.2.3",
+    "@types/markdown-it": "13.0.7",
     "@types/node": "18.16.7",
     "@types/react": "17.0.59",
     "@types/styled-components": "5.1.26",
